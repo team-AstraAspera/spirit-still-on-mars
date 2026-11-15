@@ -93,6 +93,7 @@ const EVIDENCE = [
     when: "February 2004",
     pia: "PIA05223",
     instrument: "Rock Abrasion Tool",
+    tools: ["rat"],
     imageCaption:
       "The round hole is the first rock ever ground on Mars. It is about 4.5 cm (1.8 in) across and less than 3 mm deep. Taken by Spirit's panoramic camera.",
     question: "Mars rocks are covered in dust and weathered on the outside. What did Spirit do so scientists could study the inside?",
@@ -111,6 +112,7 @@ const EVIDENCE = [
     when: "2006, Low Ridge",
     pia: "PIA08567",
     instrument: "Arm instruments (APXS and Microscopic Imager)",
+    tools: ["apxs", "mi"],
     imageCaption:
       "Spirit's wheel track runs along the left edge. Just to its right are bright patches of Halley, a rock Spirit's wheels broke open when the rover drove over it. The colors are exaggerated (false color) to make different materials stand out. Taken by Spirit's panoramic camera.",
     question: "Spirit found bright material in Halley that was different from bright soils it had seen before. What is the careful conclusion?",
@@ -129,6 +131,7 @@ const EVIDENCE = [
     when: "2007",
     pia: "PIA09491",
     instrument: "Alpha Particle X-ray Spectrometer (APXS)",
+    tools: ["apxs"],
     imageCaption:
       "The bright stripe is soil churned up by Spirit's broken wheel. The track is about 20 cm (8 in) wide. Taken by Spirit's panoramic camera, close to true color.",
     question: "Spirit's chemistry tool found the bright soil is about 90% silica. On Earth, where does silica this pure usually form?",
@@ -170,3 +173,33 @@ const IMAGE_CREDITS = {
   PIA11757: "NASA/JPL-Caltech/Cornell",
   PIA12205: "NASA/JPL-Caltech/University of Arizona",
 };
+
+// Spirit's science tools. Photos are lab photos of the flight instruments or
+// identical copies, from NASA/JPL and the instrument teams.
+const TOOLS = [
+  { id: "pancam", name: "Pancam", where: "On the mast",
+    what: "Two color cameras at about the height of a person's eyes. Spirit used them to take the big panoramas, and color filters help show what rocks are made of.",
+    credit: "NASA/JPL/Cornell" },
+  { id: "minites", name: "Mini-TES", where: "Looks out through the mast",
+    what: "Measures the heat that rocks and soil give off. Different minerals glow differently in infrared light, so scientists could pick targets from far away.",
+    credit: "NASA/JPL/Arizona State University" },
+  { id: "mi", name: "Microscopic Imager", where: "On the arm",
+    what: "A close-up camera, like a geologist's magnifying glass. It shows tiny grains and textures in rocks and soil.",
+    credit: "NASA/JPL/USGS" },
+  { id: "apxs", name: "APXS", where: "On the arm",
+    what: "The Alpha Particle X-ray Spectrometer tells which chemical elements are in a rock. It found that the soil at Gertrude Weise is about 90% silica.",
+    credit: "NASA/JPL/Max Planck Institute for Chemistry" },
+  { id: "mossbauer", name: "Moessbauer Spectrometer", where: "On the arm",
+    what: "Small enough to hold in your hand. It finds minerals that contain iron, which can show whether water changed the rock.",
+    credit: "NASA/JPL/University of Mainz" },
+  { id: "rat", name: "Rock Abrasion Tool", where: "On the arm",
+    what: "A tiny grinder that scrapes off a rock's dusty outer layer, making a hole about 4.5 cm (1.8 in) wide so the other tools can study the fresh rock inside.",
+    credit: "NASA/JPL/Honeybee Robotics" },
+  { id: "magnets", name: "Magnets", where: "On the rover deck",
+    what: "Catch magnetic dust blowing in the Mars air. Cameras photograph the dust that sticks so scientists can learn what it is made of.",
+    credit: "NASA/JPL/Niels Bohr Institute" },
+  { id: "sundial", name: "Calibration target", where: "On the rover deck",
+    what: "A sundial with color patches. Pancam photographs it to check that the colors in its pictures are right. It says \"Two Worlds, One Sun.\"",
+    credit: "NASA/JPL/Cornell" },
+];
+const toolById = (id) => TOOLS.find((t) => t.id === id);

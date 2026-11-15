@@ -173,6 +173,25 @@
     $("#scratchLink").href = url;
   }
 
+  /* ---------- Tool gallery ---------- */
+  function toolkit() {
+    const grid = $("#toolGrid");
+    if (!grid) return;
+    TOOLS.forEach((t) => {
+      const card = document.createElement("button");
+      card.className = "tool-card";
+      card.setAttribute("aria-expanded", "false");
+      card.innerHTML = `<img src="tools/${t.id}.jpg" alt="${t.name}" loading="lazy">
+        <span class="tool-name">${t.name}</span><span class="tool-where">${t.where}</span>
+        <span class="tool-what">${t.what}<em>Photo: ${t.credit}</em></span>`;
+      card.addEventListener("click", () => {
+        const open = card.getAttribute("aria-expanded") === "true";
+        card.setAttribute("aria-expanded", open ? "false" : "true");
+      });
+      grid.appendChild(card);
+    });
+  }
+
   /* ---------- Evidence lab ---------- */
   function evidenceLab() {
     const tabs = $("#evidenceTabs");
@@ -202,6 +221,10 @@
       $("#labCaption").textContent = `${ev.imageCaption} ${ev.pia}, ${IMAGE_CREDITS[ev.pia]}.`;
       $("#labWhen").textContent = ev.when;
       $("#labTool").textContent = ev.instrument;
+      $("#labTools").innerHTML = (ev.tools || []).map((id) => {
+        const t = toolById(id);
+        return `<figure class="lab-tool"><img src="tools/${t.id}.jpg" alt="${t.name}" loading="lazy"><figcaption>${t.name}</figcaption></figure>`;
+      }).join("");
       $("#labName").textContent = ev.name;
       $("#labQ").textContent = ev.question;
       $("#labFeedback").innerHTML = "";
@@ -332,6 +355,7 @@
   timeline();
   game();
   evidenceLab();
+  toolkit();
   findSpirit();
   navSpy();
   sources();
