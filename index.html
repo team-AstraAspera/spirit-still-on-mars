@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spirit: Still on Mars | Team AstraAspera</title>
+  <meta name="description" content="An interactive story about NASA's Spirit rover, the broken wheel that made a discovery, and the machine that is still on Mars today. NASA Space Apps Challenge 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#play">Skip to the game</a>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#top"><span class="brand-dot"></span>Spirit: Still on Mars</a>
+    <nav aria-label="Sections">
+      <a href="#story">Story</a>
+      <a href="#play">Play</a>
+      <a href="#evidence">Evidence Lab</a>
+      <a href="#find">Find Spirit</a>
+      <a href="#legacy">Legacy</a>
+    </nav>
+    <div class="badges" aria-label="Your progress" title="Your progress">
+      <span class="badge" data-badge="adirondack" title="Adirondack">1</span>
+      <span class="badge" data-badge="halley" title="Halley">2</span>
+      <span class="badge" data-badge="gertrude" title="Gertrude Weise">3</span>
+      <span class="badge badge-star" data-badge="found" title="Found Spirit">&#9733;</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <canvas id="stars" aria-hidden="true"></canvas>
+    <div class="hero-photo" id="heroPhoto" role="img" aria-label="Bright soil churned up by Spirit's broken wheel, photographed by Spirit on Mars"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">NASA Space Apps 2026 &middot; Abandoned but not Forgotten</p>
+      <h1>Spirit is still on Mars.</h1>
+      <p class="lede" id="typeLine" aria-live="polite"></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#play">Play the mission</a>
+        <a class="btn btn-ghost" href="#evidence">See the real evidence</a>
+      </div>
+      <p class="hero-credit">Background: the trench Spirit's broken wheel dug in 2007 (PIA11757, NASA/JPL-Caltech/Cornell, false color).</p>
+    </div>
+    <a class="scroll-cue" href="#story" aria-label="Scroll down"></a>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" aria-label="Mission numbers">
+    <div class="wrap stats-grid" id="stats"></div>
+  </section>
+
+  <!-- STORY / TIMELINE -->
+  <section class="section" id="story">
+    <div class="wrap">
+      <p class="eyebrow">The story</p>
+      <h2>Six years on another planet</h2>
+      <p class="section-lede">Tap a moment on the track to follow Spirit across Mars.</p>
+
+      <div class="timeline">
+        <div class="track" id="track" role="tablist" aria-label="Spirit's mission timeline"></div>
+        <div class="rover-marker" id="roverMarker" aria-hidden="true">
+          <svg viewBox="0 0 64 40" width="56" height="35"><rect x="10" y="14" width="44" height="10" rx="2" fill="#2a4a6b" stroke="#9ef0cf" stroke-width="1.5"/><rect x="22" y="18" width="20" height="5" fill="#e9c9a0"/><line x1="40" y1="14" x2="40" y2="4" stroke="#eef3f8" stroke-width="2"/><rect x="34" y="1" width="12" height="5" rx="2" fill="#eef3f8"/><circle cx="14" cy="30" r="5" fill="#1b2d45" stroke="#eef3f8" stroke-width="1.5"/><circle cx="32" cy="30" r="5" fill="#1b2d45" stroke="#eef3f8" stroke-width="1.5"/><circle cx="50" cy="30" r="5" fill="#1b2d45" stroke="#eef3f8" stroke-width="1.5"/></svg>
+        </div>
+      </div>
+      <article class="moment" id="moment" role="tabpanel" aria-live="polite"></article>
+      <div class="moment-nav">
+        <button class="btn btn-small" id="prevMoment" aria-label="Previous moment">&larr; Back</button>
+        <button class="btn btn-small" id="nextMoment" aria-label="Next moment">Next &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAY -->
+  <section class="section section-alt" id="play">
+    <div class="wrap play-grid">
+      <div>
+        <p class="eyebrow">Play</p>
+        <h2>Drive Spirit yourself</h2>
+        <p>Land on Mars, meet your science tools, and investigate real rocks and soil Spirit studied, from Adirondack to the silica found by a broken wheel. Then stay with Spirit through its final winter.</p>
+        <ul class="controls">
+          <li><kbd>&larr;</kbd><kbd>&rarr;</kbd> Drive</li>
+          <li><kbd>Space</kbd> Investigate (hold it to use a tool)</li>
+          <li><kbd>R</kbd> Recharge &nbsp; <kbd>C</kbd> Ask mission control</li>
+          <li><span class="click-icon">&#128432;</span> Click an answer to choose it</li>
+        </ul>
+        <p class="note">Click the green flag, then click inside the game so it hears your keys.</p>
+        <p class="note">Spirit's thoughts and mission control's lines are made up to tell the story. The events, places and science are real.</p>
+        <a class="link" id="scratchLink" target="_blank" rel="noopener">Open the game on Scratch &#8599;</a>
+      </div>
+      <div class="game-frame">
+        <iframe id="scratchFrame" title="Spirit: Follow the Clues, a Scratch game" allowtransparency="true" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE LAB -->
+  <section class="section" id="evidence">
+    <div class="wrap">
+      <p class="eyebrow">Evidence Lab</p>
+      <h2>Now look at the real thing</h2>
+      <p class="section-lede">These are the actual pictures Spirit took. Move over a photo to look through Spirit's magnifier, then answer like a scientist.</p>
+
+      <div class="tabs" role="tablist" id="evidenceTabs"></div>
+      <div class="lab" id="lab">
+        <figure class="lab-photo">
+          <div class="lens-wrap" id="lensWrap">
+            <img id="labImg" alt="">
+            <div class="lens" id="lens" aria-hidden="true"></div>
+          </div>
+          <figcaption id="labCaption"></figcaption>
+        </figure>
+        <div class="lab-panel">
+          <p class="lab-meta"><span id="labWhen"></span> &middot; Tool: <strong id="labTool"></strong></p>
+          <h3 id="labName"></h3>
+          <p class="lab-q" id="labQ"></p>
+          <div class="options" id="labOptions"></div>
+          <div class="feedback" id="labFeedback" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIND SPIRIT -->
+  <section class="section section-alt" id="find">
+    <div class="wrap find-grid">
+      <div>
+        <p class="eyebrow">Find Spirit</p>
+        <h2>Can you spot a rover from space?</h2>
+        <p>In June 2009, a camera called HiRISE on the Mars Reconnaissance Orbiter took this picture from far above Mars. Spirit is in it, stuck in soft soil. The pale round shape is a plateau called Home Plate, about 80 meters across.</p>
+        <p><strong>Click where you think Spirit is.</strong></p>
+        <p class="find-status" id="findStatus" aria-live="polite">Look for something small and bright.</p>
+        <button class="btn btn-small" id="findReveal">Show me</button>
+      </div>
+      <figure class="find-figure">
+        <div class="find-wrap" id="findWrap" tabindex="0" aria-label="Orbital photo of Home Plate. Click to guess where Spirit is.">
+          <img id="findImg" alt="Black and white orbital photo of the Home Plate plateau on Mars, with Spirit as a tiny bright dot">
+          <div class="find-ring" id="findRing" hidden></div>
+          <div class="find-ping" id="findPing" hidden></div>
+        </div>
+        <figcaption>PIA12205, HiRISE, June 13, 2009. NASA/JPL-Caltech/University of Arizona.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- LEGACY -->
+  <section class="section legacy" id="legacy">
+    <div class="wrap narrow">
+      <p class="eyebrow">Abandoned, but not forgotten</p>
+      <h2>Spirit stopped talking. Its discoveries did not.</h2>
+      <p>Spirit was built to last three months. It worked for more than six years, survived three Martian winters, and kept going even after a wheel broke. That broken wheel uncovered one of the mission's biggest clues: Mars once had hot water or steam. On Earth, places like that are full of tiny living things.</p>
+      <p>Today Spirit sits silent at Troy, next to Home Plate, where it went quiet during its fourth winter. The more than 124,000 pictures it sent home are still there for anyone to explore, including you.</p>
+
+      <div class="notebook" id="notebook">
+        <h3>Your field notebook</h3>
+        <ol id="notebookList"></ol>
+        <p class="notebook-done" id="notebookDone" hidden>Notebook complete. You followed the same clues NASA's scientists did.</p>
+      </div>
+
+      <a class="btn btn-primary" href="#play">Play again</a>
+    </div>
+  </section>
+
+  <!-- CREDITS -->
+  <footer class="footer" id="credits">
+    <div class="wrap footer-grid">
+      <div>
+        <h3>Team AstraAspera</h3>
+        <p>Made for the 2026 NASA Space Apps Challenge: <em>Abandoned but not Forgotten: Storytelling about NASA's Discarded Equipment on the Moon and Mars.</em></p>
+        <p class="small">All photos are from NASA's Photojournal and are credited where they appear. Spirit's voice and dialogue in the game are fictional; all mission events and science are based on the NASA sources listed here.</p>
+      </div>
+      <div>
+        <h3>Sources</h3>
+        <ul class="sources" id="sources"></ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
