@@ -198,8 +198,9 @@ const TOOLS = [
   { id: "magnets", name: "Magnets", where: "On the rover deck",
     what: "Catch magnetic dust blowing in the Mars air. Cameras photograph the dust that sticks so scientists can learn what it is made of.",
     credit: "NASA/JPL/Niels Bohr Institute" },
-  { id: "sundial", name: "Calibration target", where: "On the rover deck",
-    what: "A sundial with color patches. Pancam photographs it to check that the colors in its pictures are right. It says \"Two Worlds, One Sun.\"",
-    credit: "NASA/JPL/Cornell" },
+  { id: "navcam", name: "Navcam", where: "On the mast",
+    what: "Two black-and-white cameras that work like a pair of eyes, so they can see in 3D. Drivers on Earth used Navcam pictures to plan safe routes. In this picture, Navcam looked down at Spirit itself.",
+    img: "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia04/pia04983/PIA04983.jpg?w=560",
+    credit: "NASA/JPL (PIA04983)" },
 ];
 const toolById = (id) => TOOLS.find((t) => t.id === id);
