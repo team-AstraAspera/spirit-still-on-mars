@@ -181,7 +181,7 @@
       const card = document.createElement("button");
       card.className = "tool-card";
       card.setAttribute("aria-expanded", "false");
-      card.innerHTML = `<img src="tools/${t.id}.jpg" alt="${t.name}" loading="lazy">
+      card.innerHTML = `<img src="${t.id}.jpg" alt="${t.name}" loading="lazy">
         <span class="tool-name">${t.name}</span><span class="tool-where">${t.where}</span>
         <span class="tool-what">${t.what}<em>Photo: ${t.credit}</em></span>`;
       card.addEventListener("click", () => {
@@ -223,7 +223,7 @@
       $("#labTool").textContent = ev.instrument;
       $("#labTools").innerHTML = (ev.tools || []).map((id) => {
         const t = toolById(id);
-        return `<figure class="lab-tool"><img src="tools/${t.id}.jpg" alt="${t.name}" loading="lazy"><figcaption>${t.name}</figcaption></figure>`;
+        return `<figure class="lab-tool"><img src="${t.id}.jpg" alt="${t.name}" loading="lazy"><figcaption>${t.name}</figcaption></figure>`;
       }).join("");
       $("#labName").textContent = ev.name;
       $("#labQ").textContent = ev.question;
