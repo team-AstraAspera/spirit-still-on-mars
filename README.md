@@ -11,7 +11,7 @@ A one-page interactive site for kids (ages 8 to 12) built around our Scratch gam
 | Mission numbers | Animated counters: 3 months planned, 6+ years worked, 7.73 km, 124,000+ images |
 | Story | Clickable timeline from launch (2003) to the end of the mission (2011); a rover icon drives to each moment |
 | Play | Our Scratch game, embedded |
-| Evidence Lab | Real NASA photos of Adirondack, Halley and Gertrude Weise with a magnifier lens and a 3-choice science question for each |
+| Evidence Lab | Real NASA photos of Adirondack, Halley and Gertrude Weise with a magnifier lens and a 3-choice science question for each, plus a gallery of Spirit's science tools |
 | Find Spirit | A real HiRISE orbital photo from 2009: click to find the rover, with warmer/colder hints |
 | Legacy | Closing story plus a field notebook that fills in as you finish each activity |
 
@@ -44,11 +44,14 @@ All text, dates, questions and image IDs live in `data.js`. Change them there; y
 | PIA09491 | Silica-rich soil "Gertrude Weise", Pancam, 2007 | NASA/JPL/Cornell |
 | PIA11757 | Trench dug by the broken wheel, Pancam, false color | NASA/JPL-Caltech/Cornell |
 | PIA12205 | Spirit at Troy seen from orbit, HiRISE (MRO), June 2009 | NASA/JPL-Caltech/University of Arizona |
+| PIA04983 | Overhead view of Spirit taken by its Navcam (used on the Navcam card) | NASA/JPL |
+| PIA05111 | The Moessbauer spectrometer (used on the Moessbauer card) | NASA/JPL/University of Mainz |
+| Other tool photos | Lab photos of Pancam, Mini-TES, Microscopic Imager, APXS, Rock Abrasion Tool and magnets | NASA/JPL / MER Athena science team |
 
-Mission facts come from NASA's Spirit mission page and JPL's 2011 end-of-mission release. Full source links are in the site footer.
+Mission facts come from NASA's Spirit mission page and JPL's 2011 end-of-mission release. Science tool descriptions come from Squyres et al. (2003), "Athena Mars rover science investigation," Journal of Geophysical Research, https://doi.org/10.1029/2003JE002121. Full source links are in the Sources list at the bottom of the site.
 
 ## Notes
 
 - Spirit's dialogue in the game is fictional. Events, places and science are real.
-- Built with plain HTML, CSS and JavaScript. AI-assisted coding was used for the website; this is disclosed in our project submission.
+- Built with plain HTML, CSS and JavaScript. AI assistance (Claude, by Anthropic) was used to write the website code, find and check NASA sources, and test the Scratch game; this is disclosed in our project submission. The Scratch game was made by our team.
 - Fonts: Space Grotesk and Inter (Google Fonts, SIL Open Font License).
